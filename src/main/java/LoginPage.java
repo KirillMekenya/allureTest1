@@ -32,6 +32,7 @@ public class LoginPage {
         return this;
     }
 
+    @Step
     public MainPage auth (String username, String password) {
         this.typeUserName(username);
         this.typePassword(password);
