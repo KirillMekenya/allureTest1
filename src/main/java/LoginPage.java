@@ -1,3 +1,4 @@
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -13,16 +14,19 @@ public class LoginPage {
     private By loginButton = By.xpath("//button[@type='submit']/span/span");
     private By inputPassword = By.xpath("//*[@id='password']");
 
+    @Step
     public MainPage clickLoginButton () {
         driver.findElement(loginButton).click();
         return new MainPage(driver);
     }
 
+    @Step
     public LoginPage typeUserName (String username) {
         driver.findElement(inputLogin).sendKeys(username);
         return this;
     }
 
+    @Step
     public LoginPage typePassword (String password) {
         driver.findElement(inputPassword).sendKeys(password);
         return this;
